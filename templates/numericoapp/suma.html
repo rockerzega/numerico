@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h2>Estas en suma</h2>
+    <div class="container-fluid" style="margin-bottom: 20rem;"> 
+        <div class="row">
+            <div class="col-md-6" style="margin: 1rem auto 0 auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="GET" action="{% url 'submitquery' %}">
+                            <div class="form-group">
+                            
+                                <label>Primer numero <input type="text" class="form-control" name="query" id="query" style="margin-bottom: 1rem"></label>
+                            
+                                <label>Segundo Numero <input type="text" class="form-control" name="numero" id="numero" style="margin-bottom: 1rem"></label>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="submit" class="btn btn-success" style="display: block; margin: 0 auto;">
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="reset" class="btn btn-danger" style="display: block; margin: 0 auto;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" style="margin: 1rem auto 0 auto;">
+                <label>Respuesta : {{ ans }} </label>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
