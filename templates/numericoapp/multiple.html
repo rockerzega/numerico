@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h3>Splines Cubicos</h3>
+<form method="post" action="#">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" name="btnAdd" value="guardar">Guardar</button>
+    <input type="number" name="cantidad" value=2 ><br>
+    <button type="submit" name="btnCalc" value="btnCalc">Calcular</button>
+</form>
+<div calss="resultado">
+    {% if ecuacion %}
+        <ul>
+            {% for ec in ecuacion %}
+            <li style="color:blue">{{ ec }}</li>
+            {% endfor %}
+        </ul>
+        
+        <div>
+            {% load static %}
+            <img src="{% static 'programas/hermite.jpg' %}" alt="hermite">
+        </div>
+    
+    {% endif %}
+    
+</div>
+{% endblock %}
